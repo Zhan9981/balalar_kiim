@@ -6,8 +6,7 @@ import { dirname } from 'path';
 import path from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
+const _dirname = dirname(_filename);
 
 const app = express();
 const PORT = 3000;
@@ -54,6 +53,5 @@ app.get('/api/products', async (req, res) => {
 
 /* ---------- start ---------- */
 app.listen(PORT, () =>
-  console.log(`Server running on http://localhost:${PORT}`)
+  console.log(Server running on http://localhost:${PORT})
 );
-
