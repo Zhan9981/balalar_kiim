@@ -1,0 +1,61 @@
+// public/js/products.js
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('products-container');
+  const params    = new URLSearchParams(window.location.search);
+  const url       = '/api/products' + (params.toString() ? '?' + params : '');
+
+  fetch(url)
+    .then(r => r.json())
+    .then(renderProducts)
+    .catch(() => {
+      container.innerHTML =
+        '<div class="alert alert-danger">Қате: деректер жүктелмеді</div>';
+    });
+
+  function renderProducts(list) {
+    if (!list.length) {
+      container.innerHTML = '<p>Тауар табылмады.</p>';
+      return;
+    }
+    container.innerHTML = list.map(p => `
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="product-card card h-100">
+          <img src="images/${p.image_url}" class="card-img-top" alt="${p.name}">
+          ${p.is_sale ? '<span class="badge sale-badge">Sale</span>' : ''}
+          ${p.is_free_shipping ? '<span class="badge shipping-badge">Free</span>' : ''}
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">${p.name}</h5>
+            <p class="card-text small flex-grow-1">${p.description}</p>
+            <p class="current-price mb-3">
+              ${p.price.toLocaleString()} ₸
+              ${p.old_price ? <span class="old-price">${p.old_price.toLocaleString()} ₸</span> : ''}
+            </p>
+            <button class="btn btn-primary w-100 mt-auto">Себетке</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+});
+// products.js
+function addToCart(product) {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  cart.push(product);                 // product – объект (id, name, price…)
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCounter();                // санды бірден жаңарту
+}
+
+// Карточка генерерлеу кезінде:
+cardInner += `
+  <button class="btn btn-primary w-100 mt-2 add-to-cart" data-id="${p.id}">Себетке қосу</button>
+`;
+
+// Бір рет делегирование:
+document.getElementById('products-container')
+  .addEventListener('click', e => {
+    if (e.target.classList.contains('add-to-cart')) {
+      const id = e.target.dataset.id;
+      const product = products.find(x => x.id == id); // products – сіз шығарған массив
+      addToCart(product);
+    }
+  });

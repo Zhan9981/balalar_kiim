@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>Тіркелу - BalaStyle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+        }
+        .register-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <div id="navbar"></div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="BalaStyle" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Басты бет</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Киімдер</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Категориялар
+                        </a>
+                        <ul class="dropdown-menu" id="categories-menu">
+                            <!-- Категории будут загружены через JavaScript -->
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Біз туралы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Байланыс</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div class="input-group search-box">
+                        <input type="text" class="form-control" placeholder="Іздеу...">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <a href="#" class="btn btn-outline-primary me-2"><i class="fas fa-user"></i></a>
+                    <a href="cart.html" class="btn btn-primary position-relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter" style="display: none;">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card register-card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Тіркелу</h2>
+                        
+                        <form id="registerForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Аты-жөніңіз</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Электрондық пошта</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Құпия сөз</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Құпия сөзді растау</label>
+                                <input type="password" class="form-control" id="confirmPassword" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100">Тіркелу</button>
+                        </form>
+                        
+                        <div class="mt-3 text-center">
+                            <p>Аккаунтыңыз бар ма? <a href="login.html">Жүйеге кіру</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+     <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">
+                        <img src="images/logo-white.png" alt="BalaStyle" height="30">
+                    </h5>
+                    <p>Балаларға арналған ең үздік киімдер.</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://facebook.com/balastyle" class="text-white me-3" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/balastyle_kz" class="text-white me-3" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.me/balastyle_kz" class="text-white me-3" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/77771234567" class="text-white" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="mb-3">Сілтемелер</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Басты</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-white">Тауарлар</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">Біз туралы</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white">Байланыс</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-white">Блог</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="mb-3">Байланыс</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Алматы, Абай көш. 1</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +7 777 123 4567</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@balastyle.kz</li>
+                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Дүйсенбі-Жұма: 10:00 - 20:00</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="mb-3">Жаңалықтарға жазылыңыз</h5>
+                    <p>Жаңа тауарлар мен жеңілдіктер туралы хабардар болыңыз.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                            <button class="btn btn-primary" type="submit">Жазылу</button>
+                        </div>
+                    </form>
+                    <div class="payment-methods mt-3">
+                        <img src="images/visa.png" alt="Visa" height="25" class="me-2">
+                        <img src="images/mastercard.png" alt="Mastercard" height="25" class="me-2">
+                        <img src="images/kaspi.png" alt="Kaspi" height="25">
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2023 BalaStyle. Барлық құқықтар қорғалған.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3">Құпиялылық саясаты</a>
+                    <a href="#" class="text-white">Қызмет көрсету шарттары</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Навигация мен подвалды жүктеу
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+        
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+
+        // Тіркеу формасын өңдеу
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if(password !== confirmPassword) {
+                alert('Құпия сөздер сәйкес келмейді!');
+                return;
+            }
+            
+            // Мұнда тіркеу логикасын қосу керек (AJAX арқылы серверге жіберу)
+            alert('Тіркелу сәтті аяқталды!');
+            window.location.href = 'profile.html';
+        });
+    </script>
+</body>
+</html>
